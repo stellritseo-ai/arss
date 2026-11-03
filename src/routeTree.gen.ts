@@ -10,33 +10,235 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ArlingtonTxRouteImport } from './routes/arlington-tx'
+import { Route as CapabilitiesRouteImport } from './routes/capabilities'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DallasTxRouteImport } from './routes/dallas-tx'
+import { Route as FireDamageServicesRouteImport } from './routes/fire-damage-services'
+import { Route as FriscoTxRouteImport } from './routes/frisco-tx'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GeneralConstructionServicesRouteImport } from './routes/general-construction-services'
+import { Route as IrvingTxRouteImport } from './routes/irving-tx'
+import { Route as PlanoTxRouteImport } from './routes/plano-tx'
+import { Route as RemodelingRenovationServicesRouteImport } from './routes/remodeling-renovation-services'
+import { Route as RenovationAndFacilityUpgradesRouteImport } from './routes/renovation-and-facility-upgrades'
+import { Route as RequestInspectionRouteImport } from './routes/request-inspection'
+import { Route as ReviewsRouteImport } from './routes/reviews'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArlingtonTxRoute = ArlingtonTxRouteImport.update({
+  id: '/arlington-tx',
+  path: '/arlington-tx',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesRoute = CapabilitiesRouteImport.update({
+  id: '/capabilities',
+  path: '/capabilities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DallasTxRoute = DallasTxRouteImport.update({
+  id: '/dallas-tx',
+  path: '/dallas-tx',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FireDamageServicesRoute = FireDamageServicesRouteImport.update({
+  id: '/fire-damage-services',
+  path: '/fire-damage-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FriscoTxRoute = FriscoTxRouteImport.update({
+  id: '/frisco-tx',
+  path: '/frisco-tx',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GeneralConstructionServicesRoute =
+  GeneralConstructionServicesRouteImport.update({
+    id: '/general-construction-services',
+    path: '/general-construction-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const IrvingTxRoute = IrvingTxRouteImport.update({
+  id: '/irving-tx',
+  path: '/irving-tx',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanoTxRoute = PlanoTxRouteImport.update({
+  id: '/plano-tx',
+  path: '/plano-tx',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemodelingRenovationServicesRoute =
+  RemodelingRenovationServicesRouteImport.update({
+    id: '/remodeling-renovation-services',
+    path: '/remodeling-renovation-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RenovationAndFacilityUpgradesRoute =
+  RenovationAndFacilityUpgradesRouteImport.update({
+    id: '/renovation-and-facility-upgrades',
+    path: '/renovation-and-facility-upgrades',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RequestInspectionRoute = RequestInspectionRouteImport.update({
+  id: '/request-inspection',
+  path: '/request-inspection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewsRoute = ReviewsRouteImport.update({
+  id: '/reviews',
+  path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/arlington-tx': typeof ArlingtonTxRoute
+  '/capabilities': typeof CapabilitiesRoute
+  '/contact': typeof ContactRoute
+  '/dallas-tx': typeof DallasTxRoute
+  '/fire-damage-services': typeof FireDamageServicesRoute
+  '/frisco-tx': typeof FriscoTxRoute
+  '/gallery': typeof GalleryRoute
+  '/general-construction-services': typeof GeneralConstructionServicesRoute
+  '/irving-tx': typeof IrvingTxRoute
+  '/plano-tx': typeof PlanoTxRoute
+  '/remodeling-renovation-services': typeof RemodelingRenovationServicesRoute
+  '/renovation-and-facility-upgrades': typeof RenovationAndFacilityUpgradesRoute
+  '/request-inspection': typeof RequestInspectionRoute
+  '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/arlington-tx': typeof ArlingtonTxRoute
+  '/capabilities': typeof CapabilitiesRoute
+  '/contact': typeof ContactRoute
+  '/dallas-tx': typeof DallasTxRoute
+  '/fire-damage-services': typeof FireDamageServicesRoute
+  '/frisco-tx': typeof FriscoTxRoute
+  '/gallery': typeof GalleryRoute
+  '/general-construction-services': typeof GeneralConstructionServicesRoute
+  '/irving-tx': typeof IrvingTxRoute
+  '/plano-tx': typeof PlanoTxRoute
+  '/remodeling-renovation-services': typeof RemodelingRenovationServicesRoute
+  '/renovation-and-facility-upgrades': typeof RenovationAndFacilityUpgradesRoute
+  '/request-inspection': typeof RequestInspectionRoute
+  '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/arlington-tx': typeof ArlingtonTxRoute
+  '/capabilities': typeof CapabilitiesRoute
+  '/contact': typeof ContactRoute
+  '/dallas-tx': typeof DallasTxRoute
+  '/fire-damage-services': typeof FireDamageServicesRoute
+  '/frisco-tx': typeof FriscoTxRoute
+  '/gallery': typeof GalleryRoute
+  '/general-construction-services': typeof GeneralConstructionServicesRoute
+  '/irving-tx': typeof IrvingTxRoute
+  '/plano-tx': typeof PlanoTxRoute
+  '/remodeling-renovation-services': typeof RemodelingRenovationServicesRoute
+  '/renovation-and-facility-upgrades': typeof RenovationAndFacilityUpgradesRoute
+  '/request-inspection': typeof RequestInspectionRoute
+  '/reviews': typeof ReviewsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/arlington-tx'
+    | '/capabilities'
+    | '/contact'
+    | '/dallas-tx'
+    | '/fire-damage-services'
+    | '/frisco-tx'
+    | '/gallery'
+    | '/general-construction-services'
+    | '/irving-tx'
+    | '/plano-tx'
+    | '/remodeling-renovation-services'
+    | '/renovation-and-facility-upgrades'
+    | '/request-inspection'
+    | '/reviews'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/arlington-tx'
+    | '/capabilities'
+    | '/contact'
+    | '/dallas-tx'
+    | '/fire-damage-services'
+    | '/frisco-tx'
+    | '/gallery'
+    | '/general-construction-services'
+    | '/irving-tx'
+    | '/plano-tx'
+    | '/remodeling-renovation-services'
+    | '/renovation-and-facility-upgrades'
+    | '/request-inspection'
+    | '/reviews'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/arlington-tx'
+    | '/capabilities'
+    | '/contact'
+    | '/dallas-tx'
+    | '/fire-damage-services'
+    | '/frisco-tx'
+    | '/gallery'
+    | '/general-construction-services'
+    | '/irving-tx'
+    | '/plano-tx'
+    | '/remodeling-renovation-services'
+    | '/renovation-and-facility-upgrades'
+    | '/request-inspection'
+    | '/reviews'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ArlingtonTxRoute: typeof ArlingtonTxRoute
+  CapabilitiesRoute: typeof CapabilitiesRoute
+  ContactRoute: typeof ContactRoute
+  DallasTxRoute: typeof DallasTxRoute
+  FireDamageServicesRoute: typeof FireDamageServicesRoute
+  FriscoTxRoute: typeof FriscoTxRoute
+  GalleryRoute: typeof GalleryRoute
+  GeneralConstructionServicesRoute: typeof GeneralConstructionServicesRoute
+  IrvingTxRoute: typeof IrvingTxRoute
+  PlanoTxRoute: typeof PlanoTxRoute
+  RemodelingRenovationServicesRoute: typeof RemodelingRenovationServicesRoute
+  RenovationAndFacilityUpgradesRoute: typeof RenovationAndFacilityUpgradesRoute
+  RequestInspectionRoute: typeof RequestInspectionRoute
+  ReviewsRoute: typeof ReviewsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +250,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arlington-tx': {
+      id: '/arlington-tx'
+      path: '/arlington-tx'
+      fullPath: '/arlington-tx'
+      preLoaderRoute: typeof ArlingtonTxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/capabilities': {
+      id: '/capabilities'
+      path: '/capabilities'
+      fullPath: '/capabilities'
+      preLoaderRoute: typeof CapabilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dallas-tx': {
+      id: '/dallas-tx'
+      path: '/dallas-tx'
+      fullPath: '/dallas-tx'
+      preLoaderRoute: typeof DallasTxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fire-damage-services': {
+      id: '/fire-damage-services'
+      path: '/fire-damage-services'
+      fullPath: '/fire-damage-services'
+      preLoaderRoute: typeof FireDamageServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/frisco-tx': {
+      id: '/frisco-tx'
+      path: '/frisco-tx'
+      fullPath: '/frisco-tx'
+      preLoaderRoute: typeof FriscoTxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/general-construction-services': {
+      id: '/general-construction-services'
+      path: '/general-construction-services'
+      fullPath: '/general-construction-services'
+      preLoaderRoute: typeof GeneralConstructionServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/irving-tx': {
+      id: '/irving-tx'
+      path: '/irving-tx'
+      fullPath: '/irving-tx'
+      preLoaderRoute: typeof IrvingTxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plano-tx': {
+      id: '/plano-tx'
+      path: '/plano-tx'
+      fullPath: '/plano-tx'
+      preLoaderRoute: typeof PlanoTxRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/remodeling-renovation-services': {
+      id: '/remodeling-renovation-services'
+      path: '/remodeling-renovation-services'
+      fullPath: '/remodeling-renovation-services'
+      preLoaderRoute: typeof RemodelingRenovationServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/renovation-and-facility-upgrades': {
+      id: '/renovation-and-facility-upgrades'
+      path: '/renovation-and-facility-upgrades'
+      fullPath: '/renovation-and-facility-upgrades'
+      preLoaderRoute: typeof RenovationAndFacilityUpgradesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/request-inspection': {
+      id: '/request-inspection'
+      path: '/request-inspection'
+      fullPath: '/request-inspection'
+      preLoaderRoute: typeof RequestInspectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reviews': {
+      id: '/reviews'
+      path: '/reviews'
+      fullPath: '/reviews'
+      preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ArlingtonTxRoute: ArlingtonTxRoute,
+  CapabilitiesRoute: CapabilitiesRoute,
+  ContactRoute: ContactRoute,
+  DallasTxRoute: DallasTxRoute,
+  FireDamageServicesRoute: FireDamageServicesRoute,
+  FriscoTxRoute: FriscoTxRoute,
+  GalleryRoute: GalleryRoute,
+  GeneralConstructionServicesRoute: GeneralConstructionServicesRoute,
+  IrvingTxRoute: IrvingTxRoute,
+  PlanoTxRoute: PlanoTxRoute,
+  RemodelingRenovationServicesRoute: RemodelingRenovationServicesRoute,
+  RenovationAndFacilityUpgradesRoute: RenovationAndFacilityUpgradesRoute,
+  RequestInspectionRoute: RequestInspectionRoute,
+  ReviewsRoute: ReviewsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
