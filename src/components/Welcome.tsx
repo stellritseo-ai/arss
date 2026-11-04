@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitInquiryFn } from "../lib/inquiry";
 import {
   Flame,
   Home,
@@ -49,6 +50,54 @@ const serviceOptions = [
 
 export function Welcome() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const fullName = String(formData.get("fullName") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const serviceVal = String(formData.get("service") || "");
+    const serviceLabel =
+      serviceOptions.find((o) => o.value === serviceVal)?.label || serviceVal;
+    const message = String(formData.get("message") || "").trim();
+
+    try {
+      const res = await submitInquiryFn({
+        data: {
+          formType: "Quick Inspection (Home)",
+          name: fullName,
+          phone,
+          email,
+          service: serviceLabel,
+          message,
+        },
+      });
+
+      if (res.success) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        setSubmitError(
+          res.message || "Failed to send request. Please try calling directly."
+        );
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitError(
+        "An error occurred while sending your request. Please call us directly at (469) 360-5805."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="about" className="section-welcome">
@@ -127,19 +176,16 @@ export function Welcome() {
               <button
                 type="button"
                 className="inspection-reset-btn"
-                onClick={() => setSubmitted(false)}
+                onClick={() => {
+                  setSubmitted(false);
+                  setSubmitError(null);
+                }}
               >
                 Send Another Request
               </button>
             </div>
           ) : (
-            <form
-              className="arss-quote-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
-            >
+            <form className="arss-quote-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <input
                   type="text"
@@ -188,11 +234,39 @@ export function Welcome() {
               </div>
 
               <div className="submit-row">
-                <button type="submit" className="inspection-submit-btn">
-                  <span>Request An Inspection</span>
-                  <ArrowRight size={16} strokeWidth={2.5} />
+                <button
+                  type="submit"
+                  className="inspection-submit-btn"
+                  disabled={isSubmitting}
+                  style={isSubmitting ? { opacity: 0.75, cursor: "not-allowed" } : undefined}
+                >
+                  {isSubmitting ? (
+                    <span>Sending Request...</span>
+                  ) : (
+                    <>
+                      <span>Request An Inspection</span>
+                      <ArrowRight size={16} strokeWidth={2.5} />
+                    </>
+                  )}
                 </button>
               </div>
+
+              {submitError && (
+                <div
+                  style={{
+                    color: "#dc2626",
+                    background: "#fee2e2",
+                    border: "1px solid #f87171",
+                    borderRadius: "6px",
+                    padding: "8px 12px",
+                    fontSize: "13px",
+                    marginTop: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {submitError}
+                </div>
+              )}
 
               <div className="inspection-privacy-note">
                 <Lock size={12} />

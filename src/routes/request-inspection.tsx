@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitInquiryFn } from "../lib/inquiry";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Home,
@@ -42,10 +43,44 @@ function RequestInspectionPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const res = await submitInquiryFn({
+        data: {
+          formType: "Request Inspection",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address,
+          service: formData.serviceType,
+          propertyType: formData.propertyType,
+          urgency: formData.urgency,
+          message: formData.notes,
+        },
+      });
+
+      if (res.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(
+          res.message || "Failed to schedule inspection. Please call us directly."
+        );
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitError(
+        "An error occurred while booking inspection. Please call us directly at (469) 360-5805."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -213,6 +248,7 @@ function RequestInspectionPage() {
                       className="insp-reset-btn"
                       onClick={() => {
                         setSubmitted(false);
+                        setSubmitError(null);
                         setFormData({
                           name: "",
                           phone: "",
@@ -376,10 +412,38 @@ function RequestInspectionPage() {
                       />
                     </div>
 
-                    <button type="submit" className="insp-submit-btn">
-                      <span>Confirm &amp; Request Free Inspection</span>
-                      <ArrowRight size={17} />
+                    <button
+                      type="submit"
+                      className="insp-submit-btn"
+                      disabled={isSubmitting}
+                      style={isSubmitting ? { opacity: 0.75, cursor: "not-allowed" } : undefined}
+                    >
+                      {isSubmitting ? (
+                        <span>Scheduling Inspection...</span>
+                      ) : (
+                        <>
+                          <span>Confirm &amp; Request Free Inspection</span>
+                          <ArrowRight size={17} />
+                        </>
+                      )}
                     </button>
+
+                    {submitError && (
+                      <div
+                        style={{
+                          color: "#dc2626",
+                          background: "#fee2e2",
+                          border: "1px solid #f87171",
+                          borderRadius: "6px",
+                          padding: "8px 12px",
+                          fontSize: "13px",
+                          marginBottom: "12px",
+                          textAlign: "center",
+                        }}
+                      >
+                        {submitError}
+                      </div>
+                    )}
 
                     <p className="insp-form-privacy">
                       <ShieldCheck size={14} className="text-emerald-600" />

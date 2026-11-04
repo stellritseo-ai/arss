@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitInquiryFn } from "../lib/inquiry";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Home,
@@ -40,10 +41,41 @@ function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const res = await submitInquiryFn({
+        data: {
+          formType: "Contact Us",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          address: formData.address,
+          message: formData.message,
+        },
+      });
+
+      if (res.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(
+          res.message || "Failed to deliver inquiry. Please call us directly."
+        );
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmitError(
+        "An error occurred while sending your message. Please call us directly at (469) 360-5805."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -275,6 +307,7 @@ function ContactPage() {
                       className="con-reset-btn"
                       onClick={() => {
                         setSubmitted(false);
+                        setSubmitError(null);
                         setFormData({
                           name: "",
                           phone: "",
@@ -375,10 +408,38 @@ function ContactPage() {
                       />
                     </div>
 
-                    <button type="submit" className="con-submit-btn">
-                      <span>Submit Inquiry &amp; Request Consultation</span>
-                      <ArrowRight size={17} />
+                    <button
+                      type="submit"
+                      className="con-submit-btn"
+                      disabled={isSubmitting}
+                      style={isSubmitting ? { opacity: 0.75, cursor: "not-allowed" } : undefined}
+                    >
+                      {isSubmitting ? (
+                        <span>Delivering Message...</span>
+                      ) : (
+                        <>
+                          <span>Submit Inquiry &amp; Request Consultation</span>
+                          <ArrowRight size={17} />
+                        </>
+                      )}
                     </button>
+
+                    {submitError && (
+                      <div
+                        style={{
+                          color: "#dc2626",
+                          background: "#fee2e2",
+                          border: "1px solid #f87171",
+                          borderRadius: "6px",
+                          padding: "8px 12px",
+                          fontSize: "13px",
+                          marginBottom: "12px",
+                          textAlign: "center",
+                        }}
+                      >
+                        {submitError}
+                      </div>
+                    )}
 
                     <p className="con-form-privacy">
                       <ShieldCheck size={14} className="text-emerald-600" />
