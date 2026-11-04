@@ -180,7 +180,7 @@ export function Faq() {
                 <div className="faq-map-meta-item">
                   <Mail size={16} className="faq-map-meta-icon" />
                   <span>
-                    <strong>Email:</strong> info@arss-construction.com
+                    <strong>Email:</strong> support@arssconstruction.com
                   </span>
                 </div>
                 <div className="faq-map-meta-item">

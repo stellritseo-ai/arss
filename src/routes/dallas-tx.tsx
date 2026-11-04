@@ -535,16 +535,16 @@ function DallasTxPage() {
                     </div>
                     <div>
                       <a
-                        href="mailto:info@arss-construction.com"
+                        href="mailto:support@arssconstruction.com"
                         className="dal-cb-mail-link"
                       >
                         Leave a message
                       </a>
                       <a
-                        href="mailto:info@arss-construction.com"
+                        href="mailto:support@arssconstruction.com"
                         className="dal-cb-val"
                       >
-                        info@arss-construction.com
+                        support@arssconstruction.com
                       </a>
                     </div>
                   </div>

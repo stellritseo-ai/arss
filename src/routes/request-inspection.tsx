@@ -504,11 +504,11 @@ function RequestInspectionPage() {
                     </div>
                   </a>
 
-                  <a href="mailto:info@arss-construction.com" className="insp-cta-btn insp-cta-email">
+                  <a href="mailto:support@arssconstruction.com" className="insp-cta-btn insp-cta-email">
                     <Mail size={18} />
                     <div>
                       <span className="insp-btn-sub">Email Estimating Team</span>
-                      <span className="insp-btn-val">info@arss-construction.com</span>
+                      <span className="insp-btn-val">support@arssconstruction.com</span>
                     </div>
                   </a>
                 </div>

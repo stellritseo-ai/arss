@@ -272,11 +272,11 @@ function GalleryPage() {
                     </div>
                   </a>
 
-                  <a href="mailto:info@arss-construction.com" className="gal-cta-btn gal-cta-email">
+                  <a href="mailto:support@arssconstruction.com" className="gal-cta-btn gal-cta-email">
                     <Mail size={18} />
                     <div>
                       <span className="gal-btn-sub">Email Estimating Team</span>
-                      <span className="gal-btn-val">info@arss-construction.com</span>
+                      <span className="gal-btn-val">support@arssconstruction.com</span>
                     </div>
                   </a>
 

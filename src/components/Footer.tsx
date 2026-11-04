@@ -143,10 +143,10 @@ export function Footer() {
                 <div className="footer-contact-info">
                   <span className="footer-contact-label">Email Inquiries</span>
                   <a
-                    href="mailto:info@arss-construction.com"
+                    href="mailto:support@arssconstruction.com"
                     className="footer-contact-link"
                   >
-                    info@arss-construction.com
+                    support@arssconstruction.com
                   </a>
                 </div>
               </div>

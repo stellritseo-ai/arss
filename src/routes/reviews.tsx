@@ -537,11 +537,11 @@ function ReviewsPage() {
                     </div>
                   </a>
 
-                  <a href="mailto:info@arss-construction.com" className="rev-cta-btn rev-cta-email">
+                  <a href="mailto:support@arssconstruction.com" className="rev-cta-btn rev-cta-email">
                     <Mail size={18} />
                     <div>
                       <span className="rev-btn-sub">Email Estimating Team</span>
-                      <span className="rev-btn-val">info@arss-construction.com</span>
+                      <span className="rev-btn-val">support@arssconstruction.com</span>
                     </div>
                   </a>
 

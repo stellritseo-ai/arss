@@ -25,8 +25,8 @@ const topContactItems = [
   },
   {
     icon: Mail,
-    text: "info@arss-construction.com",
-    href: "mailto:info@arss-construction.com",
+    text: "support@arssconstruction.com",
+    href: "mailto:support@arssconstruction.com",
   },
   {
     icon: MapPin,
@@ -604,9 +604,9 @@ export function Header() {
           </ul>
 
           <div className="mnav-contact">
-            <a href="mailto:info@arss-construction.com" className="mnav-contact-row">
+            <a href="mailto:support@arssconstruction.com" className="mnav-contact-row">
               <Mail size={16} strokeWidth={2.2} />
-              <span>info@arss-construction.com</span>
+              <span>support@arssconstruction.com</span>
             </a>
             <a
               href="https://maps.google.com/?q=Dallas,+Texas"

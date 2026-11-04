@@ -194,10 +194,10 @@ function ContactPage() {
                     <div className="con-dc-content">
                       <span className="con-dc-label">Email:</span>
                       <a
-                        href="mailto:info@arss-construction.com"
+                        href="mailto:support@arssconstruction.com"
                         className="con-dc-val-link"
                       >
-                        info@arss-construction.com
+                        support@arssconstruction.com
                       </a>
                     </div>
                   </div>
@@ -261,7 +261,7 @@ function ContactPage() {
                       </div>
                       <div className="con-sc-row">
                         <span>Email:</span>
-                        <strong>{formData.email || "info@arss-construction.com"}</strong>
+                        <strong>{formData.email || "support@arssconstruction.com"}</strong>
                       </div>
                       {formData.address && (
                         <div className="con-sc-row">
@@ -471,11 +471,11 @@ function ContactPage() {
                     </div>
                   </a>
 
-                  <a href="mailto:info@arss-construction.com" className="con-cta-btn con-cta-email">
+                  <a href="mailto:support@arssconstruction.com" className="con-cta-btn con-cta-email">
                     <Mail size={18} />
                     <div>
                       <span className="con-btn-sub">Email Estimating Team</span>
-                      <span className="con-btn-val">info@arss-construction.com</span>
+                      <span className="con-btn-val">support@arssconstruction.com</span>
                     </div>
                   </a>
                 </div>

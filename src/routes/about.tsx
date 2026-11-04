@@ -159,8 +159,8 @@ function AboutPage() {
                 <div className="about-cs-divider" />
                 <div className="about-cs-item">
                   <span className="about-cs-label">Email</span>
-                  <a href="mailto:info@arss-construction.com" className="about-cs-link">
-                    info@arss-construction.com
+                  <a href="mailto:support@arssconstruction.com" className="about-cs-link">
+                    support@arssconstruction.com
                   </a>
                 </div>
                 <div className="about-cs-divider" />
@@ -230,8 +230,8 @@ function AboutPage() {
                     <Mail size={16} className="about-qcc-icon" />
                     <span>
                       <strong>Email:</strong>{" "}
-                      <a href="mailto:info@arss-construction.com" className="about-qcc-link">
-                        info@arss-construction.com
+                      <a href="mailto:support@arssconstruction.com" className="about-qcc-link">
+                        support@arssconstruction.com
                       </a>
                     </span>
                   </div>
@@ -324,14 +324,14 @@ function AboutPage() {
                   </a>
 
                   <a
-                    href="mailto:info@arss-construction.com"
+                    href="mailto:support@arssconstruction.com"
                     className="about-help-email-btn"
-                    aria-label="Email info@arss-construction.com"
+                    aria-label="Email support@arssconstruction.com"
                   >
                     <Mail size={18} />
                     <div className="about-hpb-text">
                       <span className="about-hpb-label">Leave a message</span>
-                      <span className="about-hpb-number">info@arss-construction.com</span>
+                      <span className="about-hpb-number">support@arssconstruction.com</span>
                     </div>
                   </a>
                 </div>
