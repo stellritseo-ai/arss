@@ -78,6 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "VRtNUmoKW59YhLTbzRixfGk5el4F3AjCJrFQ274il9k" },
       { title: "ARSS Construction | Premier Dallas Remodeling, Renovation & Restoration" },
       {
         name: "description",

@@ -243,6 +243,7 @@ export function buildPageHead(options: SeoOptions) {
       { name: "description", content: options.description },
       { name: "keywords", content: keywordsString },
       { name: "author", content: BRAND_NAME },
+      { name: "google-site-verification", content: "VRtNUmoKW59YhLTbzRixfGk5el4F3AjCJrFQ274il9k" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "googlebot", content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" },
 
