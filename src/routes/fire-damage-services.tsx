@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -33,6 +34,40 @@ import fireSplashImg from "../assets/gallery/splash.jpg";
 import fireExtinguisherImg from "../assets/gallery/What-You-Need-to-Know-About-Water-Fire-Extinguishers-500x383@2x.jpg";
 
 export const Route = createFileRoute("/fire-damage-services")({
+  head: buildPageHead({
+    title: "Fire & Water Damage Restoration Services TX | ARSS Construction",
+    description:
+      "Expert fire damage restoration, smoke odor elimination, water damage repair, and 24/7 emergency recovery in Dallas-Fort Worth, Texas. Call (469) 360-5805.",
+    path: "/fire-damage-services",
+    keywords: [
+      "fire damage restoration Dallas",
+      "fire restoration company Texas",
+      "smoke damage cleanup DFW",
+      "water damage repair Dallas",
+      "24/7 disaster restoration Texas",
+      "emergency board up Dallas",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Fire Damage Services", url: "/fire-damage-services" },
+    ],
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "EmergencyService",
+        name: "Fire Damage Restoration Services",
+        serviceType: "Fire & Water Disaster Restoration",
+        provider: {
+          "@type": "GeneralContractor",
+          name: "ARSS Construction",
+          url: "https://arssconstruction.com",
+          telephone: "+14693605805",
+        },
+        description:
+          "Emergency fire and water damage mitigation, soot elimination, structural rebuild, and insurance assistance across Texas.",
+      },
+    ],
+  }),
   component: FireDamageServicesPage,
 });
 

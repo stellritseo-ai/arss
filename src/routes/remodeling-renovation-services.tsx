@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -30,6 +31,39 @@ import gal6Img from "../assets/gal6.jpg";
 import heroImg from "../assets/hero.jpg";
 
 export const Route = createFileRoute("/remodeling-renovation-services")({
+  head: buildPageHead({
+    title: "Remodeling & Renovation Services | Kitchen & Bath Makeovers Dallas TX",
+    description:
+      "Transform your home with ARSS Construction. Expert kitchen remodeling, bathroom transformations, and whole-home renovations in Dallas-Fort Worth. Free consultations.",
+    path: "/remodeling-renovation-services",
+    keywords: [
+      "remodeling services Dallas",
+      "kitchen remodeling Dallas TX",
+      "bathroom renovation DFW",
+      "home remodeling contractor Texas",
+      "custom home renovation Dallas",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Remodeling & Renovation Services", url: "/remodeling-renovation-services" },
+    ],
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: "Remodeling & Renovation Services",
+        serviceType: "Home Remodeling & Renovation",
+        provider: {
+          "@type": "GeneralContractor",
+          name: "ARSS Construction",
+          url: "https://arssconstruction.com",
+          telephone: "+14693605805",
+        },
+        description:
+          "Custom kitchen and bathroom makeovers, whole-home renovations, and architectural updates throughout Dallas-Fort Worth.",
+      },
+    ],
+  }),
   component: RemodelingRenovationServicesPage,
 });
 

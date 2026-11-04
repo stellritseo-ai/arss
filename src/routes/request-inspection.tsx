@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { submitInquiryFn } from "../lib/inquiry";
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -27,6 +28,24 @@ import { FloatingActions } from "../components/FloatingActions";
 import heroImg from "../assets/hero1.png";
 
 export const Route = createFileRoute("/request-inspection")({
+  head: buildPageHead({
+    title: "Request Free Property Inspection & Estimate | ARSS Construction Dallas",
+    description:
+      "Book an on-site property inspection or remodeling estimate with ARSS Construction. Fast 60-minute emergency dispatch across Dallas-Fort Worth. 100% free consultation.",
+    path: "/request-inspection",
+    keywords: [
+      "request inspection ARSS Construction",
+      "free remodeling estimate Dallas",
+      "fire damage inspection Texas",
+      "water damage moisture inspection",
+      "commercial property inspection DFW",
+      "insurance repair estimate Dallas",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Request Inspection", url: "/request-inspection" },
+    ],
+  }),
   component: RequestInspectionPage,
 });
 

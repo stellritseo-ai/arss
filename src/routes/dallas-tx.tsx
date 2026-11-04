@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -37,6 +38,27 @@ import kitchenRemodelImg from "../assets/gallery/1678008072_en-idei-club-p-home-
 import bathRemodelImg from "../assets/gallery/1679431385_en-idei-club-p-plan-renovation-dizain-krasivo-50.jpg";
 
 export const Route = createFileRoute("/dallas-tx")({
+  head: buildPageHead({
+    title: "Water & Fire Damage Repair Contractor Dallas TX | ARSS Construction",
+    description:
+      "Restore your peace with Dallas's premier water & fire damage repair contractor. 24/7 emergency dispatch, insurance claim guidance, and luxury home remodeling.",
+    path: "/dallas-tx",
+    city: "Dallas",
+    geo: { latitude: "32.7767", longitude: "-96.7970" },
+    keywords: [
+      "water damage repair Dallas TX",
+      "fire damage restoration Dallas",
+      "home remodeling Dallas TX",
+      "general contractor Dallas",
+      "emergency restoration contractor Dallas",
+      "Park Cities remodeling contractor",
+      "Lakewood home renovations",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Dallas TX", url: "/dallas-tx" },
+    ],
+  }),
   component: DallasTxPage,
 });
 

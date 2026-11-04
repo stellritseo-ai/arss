@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -38,6 +39,24 @@ import siteInteriorImg from "../assets/gallery/425f8991daa4983b80659cdb66ceb253.
 import luxuryBasementImg from "../assets/gallery/bigstock-Basement-in-luxury-home-with-b-18131438-2048x1365-1.jpg";
 
 export const Route = createFileRoute("/renovation-and-facility-upgrades")({
+  head: buildPageHead({
+    title: "Renovation and Facility Upgrades | Public & Commercial Spaces DFW",
+    description:
+      "Modernize public and commercial spaces in Dallas-Fort Worth. System upgrades, interior remodeling, ADA compliance, and energy-efficient retrofits by ARSS Construction.",
+    path: "/renovation-and-facility-upgrades",
+    keywords: [
+      "facility upgrades Dallas",
+      "commercial building renovation Texas",
+      "public space remodeling DFW",
+      "building modernization Dallas",
+      "facility management renovation",
+      "municipal building remodel Texas",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Renovation and Facility Upgrades", url: "/renovation-and-facility-upgrades" },
+    ],
+  }),
   component: RenovationAndFacilityUpgradesPage,
 });
 

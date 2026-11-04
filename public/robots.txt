@@ -1,14 +1,16 @@
+# Robots.txt for ARSS Construction
+User-agent: *
+Allow: /
+Disallow: /_server/
+Disallow: /api/
+
+# Crawl prioritization
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
-Allow: /
+# XML Sitemap Location
+Sitemap: https://arssconstruction.com/sitemap.xml
+Host: https://arssconstruction.com

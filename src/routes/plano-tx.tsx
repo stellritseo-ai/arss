@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -37,6 +38,27 @@ import kitchenRemodelImg from "../assets/gallery/1678008072_en-idei-club-p-home-
 import livingRemodelImg from "../assets/gallery/Fireplace-Sofas-Living-Room-Beams-High-Ceiling-Mid-Century-House-Lincoln-Massachusetts.jpg";
 
 export const Route = createFileRoute("/plano-tx")({
+  head: buildPageHead({
+    title: "Water and Fire Damage Repair Company in Plano TX | ARSS Construction",
+    description:
+      "Rapid water extraction, fire damage restoration, and luxury home remodeling in Plano TX. 24/7 emergency service by licensed Texas contractors. Call (469) 360-5805.",
+    path: "/plano-tx",
+    city: "Plano",
+    geo: { latitude: "33.0198", longitude: "-96.6989" },
+    keywords: [
+      "water damage repair Plano TX",
+      "fire damage restoration Plano",
+      "home remodeling Plano TX",
+      "Plano emergency restoration",
+      "general contractor Plano",
+      "Legacy West home renovations",
+      "Willow Bend kitchen remodel",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Plano TX", url: "/plano-tx" },
+    ],
+  }),
   component: PlanoTxPage,
 });
 

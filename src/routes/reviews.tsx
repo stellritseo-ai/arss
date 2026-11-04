@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Star,
   BadgeCheck,
@@ -27,6 +28,23 @@ import { FloatingActions } from "../components/FloatingActions";
 import heroImg from "../assets/hero.jpg";
 
 export const Route = createFileRoute("/reviews")({
+  head: buildPageHead({
+    title: "Client Testimonials & Google Reviews | ARSS Construction",
+    description:
+      "Read real 5-star Google reviews from Dallas-Fort Worth homeowners, facility managers, and business owners who trust ARSS Construction for remodeling and restoration.",
+    path: "/reviews",
+    keywords: [
+      "ARSS construction reviews",
+      "Dallas contractor ratings",
+      "home remodeling testimonials DFW",
+      "restoration company reviews Texas",
+      "5 star general contractor Dallas",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Client Reviews", url: "/reviews" },
+    ],
+  }),
   component: ReviewsPage,
 });
 

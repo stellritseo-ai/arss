@@ -78,14 +78,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ARSS Construction" },
-      { name: "description", content: "Restoration, remodeling and renovation in Dallas, Texas." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "ARSS Construction" },
-      { property: "og:description", content: "Restoration, remodeling and renovation in Dallas, Texas." },
+      { title: "ARSS Construction | Premier Dallas Remodeling, Renovation & Restoration" },
+      {
+        name: "description",
+        content:
+          "Texas licensed and insured general contractor specializing in luxury home remodeling, turnkey renovations, commercial construction, and 24/7 fire and water damage restoration in Dallas-Fort Worth.",
+      },
+      { name: "author", content: "ARSS Construction" },
+      { name: "theme-color", content: "#0f244a" },
+      { property: "og:site_name", content: "ARSS Construction" },
+      { property: "og:title", content: "ARSS Construction | Premier Dallas Remodeling & Restoration" },
+      {
+        property: "og:description",
+        content:
+          "Texas licensed and insured general contractor specializing in luxury home remodeling, turnkey renovations, commercial construction, and 24/7 fire and water damage restoration in Dallas-Fort Worth.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
@@ -97,6 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "manifest", href: "/site.webmanifest" },
     ],
   }),
   shellComponent: RootShell,

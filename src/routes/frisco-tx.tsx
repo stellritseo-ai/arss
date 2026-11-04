@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -36,6 +37,27 @@ import kitchenRemodelImg from "../assets/gallery/1678008072_en-idei-club-p-home-
 import exteriorRemodelImg from "../assets/gallery/BEST-HOME-IMPROVEMENT-IDEAS-FOR-2022.jpg";
 
 export const Route = createFileRoute("/frisco-tx")({
+  head: buildPageHead({
+    title: "Water & Fire Damage Repair Company in Frisco TX | ARSS Construction",
+    description:
+      "Frisco's premier home remodeling and fire/water damage restoration contractor. High-end kitchen transformations, basement finish-outs, and rapid emergency dispatch.",
+    path: "/frisco-tx",
+    city: "Frisco",
+    geo: { latitude: "33.1507", longitude: "-96.8236" },
+    keywords: [
+      "water damage repair Frisco TX",
+      "fire damage restoration Frisco",
+      "home remodeling Frisco TX",
+      "Frisco general contractor",
+      "luxury home renovations Frisco",
+      "PGA Frisco custom remodeling",
+      "Stonebriar kitchen remodel",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Frisco TX", url: "/frisco-tx" },
+    ],
+  }),
   component: FriscoTxPage,
 });
 

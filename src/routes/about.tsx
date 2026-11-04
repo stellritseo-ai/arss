@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   ShieldCheck,
   CheckCircle2,
@@ -28,6 +29,23 @@ import constructionImg from "../assets/construction.jpg";
 import heroImg from "../assets/hero.jpg";
 
 export const Route = createFileRoute("/about")({
+  head: buildPageHead({
+    title: "About Us | ARSS Construction - 15+ Years DFW Building Excellence",
+    description:
+      "Learn about ARSS Construction, Texas's premier licensed contractor. Discover our 15+ years of craftsmanship in luxury remodeling, disaster restoration, and commercial builds.",
+    path: "/about",
+    keywords: [
+      "About ARSS Construction",
+      "Texas licensed contractor",
+      "DFW construction company",
+      "Dallas remodeling team",
+      "certified restoration specialists",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "About Us", url: "/about" },
+    ],
+  }),
   component: AboutPage,
 });
 

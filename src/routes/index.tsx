@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 
 import "../arss.css";
 import { Header } from "../components/Header";
@@ -14,6 +15,22 @@ import { Footer } from "../components/Footer";
 import { FloatingActions } from "../components/FloatingActions";
 
 export const Route = createFileRoute("/")({
+  head: buildPageHead({
+    title: "ARSS Construction | Premier Dallas Remodeling, Renovation & Restoration",
+    description:
+      "Texas licensed general contractor specializing in luxury home remodeling, turnkey renovations, commercial construction, and 24/7 fire & water damage restoration in Dallas-Fort Worth.",
+    path: "/",
+    keywords: [
+      "ARSS Construction",
+      "general contractor Dallas TX",
+      "home remodeling Dallas",
+      "fire damage restoration Dallas",
+      "water damage restoration DFW",
+      "commercial construction Texas",
+      "kitchen bathroom remodeling",
+      "emergency restoration DFW",
+    ],
+  }),
   component: HomePage,
 });
 

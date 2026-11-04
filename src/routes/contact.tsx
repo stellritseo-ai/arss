@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { submitInquiryFn } from "../lib/inquiry";
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -28,6 +29,22 @@ import { FloatingActions } from "../components/FloatingActions";
 import heroImg from "../assets/hero.jpg";
 
 export const Route = createFileRoute("/contact")({
+  head: buildPageHead({
+    title: "Contact Us | ARSS Construction Dallas TX - 24/7 Hotline",
+    description:
+      "Connect with ARSS Construction. Call (469) 360-5805 or send an inquiry for remodeling estimates, commercial bids, and 24/7 emergency water & fire restoration.",
+    path: "/contact",
+    keywords: [
+      "contact ARSS Construction",
+      "Dallas contractor phone number",
+      "restoration emergency hotline Dallas",
+      "remodeling consultation DFW",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Contact Us", url: "/contact" },
+    ],
+  }),
   component: ContactPage,
 });
 

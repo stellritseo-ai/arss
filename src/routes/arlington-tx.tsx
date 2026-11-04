@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -35,6 +36,26 @@ import luxuryLivingImg from "../assets/gallery/bigstock-Basement-in-luxury-home-
 import designPlanImg from "../assets/gallery/1679431385_en-idei-club-p-plan-renovation-dizain-krasivo-50.jpg";
 
 export const Route = createFileRoute("/arlington-tx")({
+  head: buildPageHead({
+    title: "Water & Fire Damage Repair Services Arlington TX | ARSS Construction",
+    description:
+      "Best home remodeling and fire/water damage repair services in Arlington TX. Turn your house into your dream home with affordable, high-quality remodeling. Call (469) 360-5805.",
+    path: "/arlington-tx",
+    city: "Arlington",
+    geo: { latitude: "32.7357", longitude: "-97.1081" },
+    keywords: [
+      "water damage repair Arlington TX",
+      "fire damage restoration Arlington",
+      "home remodeling Arlington TX",
+      "Arlington general contractor",
+      "kitchen bathroom remodel Arlington",
+      "Tarrant County restoration services",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Arlington TX", url: "/arlington-tx" },
+    ],
+  }),
   component: ArlingtonTxPage,
 });
 

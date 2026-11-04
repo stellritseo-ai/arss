@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -37,6 +38,24 @@ import siteFramingImg from "../assets/gallery/425f8991daa4983b80659cdb66ceb253.j
 import projectPlanningImg from "../assets/gallery/Depositphotos_11106229_l-2015.jpg";
 
 export const Route = createFileRoute("/general-construction-services")({
+  head: buildPageHead({
+    title: "General Construction Services | Commercial & Public Infrastructure DFW",
+    description:
+      "ARSS Construction delivers public sector & commercial general construction across Dallas-Fort Worth: municipal centers, schools, structural framing, and turnkey builds.",
+    path: "/general-construction-services",
+    keywords: [
+      "general construction services Dallas",
+      "commercial general contractor Texas",
+      "public sector construction DFW",
+      "structural framing contractor Dallas",
+      "turnkey commercial construction",
+      "government facility construction Texas",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "General Construction Services", url: "/general-construction-services" },
+    ],
+  }),
   component: GeneralConstructionServicesPage,
 });
 

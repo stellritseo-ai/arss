@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -21,6 +22,23 @@ import { FloatingActions } from "../components/FloatingActions";
 import heroImg from "../assets/hero1.png";
 
 export const Route = createFileRoute("/gallery")({
+  head: buildPageHead({
+    title: "Project Portfolio & Gallery | ARSS Construction Dallas TX",
+    description:
+      "Browse high-definition photos of completed kitchen makeovers, luxury bathroom renovations, commercial build-outs, and fire/water restoration projects across DFW.",
+    path: "/gallery",
+    keywords: [
+      "ARSS construction gallery",
+      "remodeling project photos Dallas",
+      "before after restoration Texas",
+      "luxury kitchen portfolio DFW",
+      "commercial construction gallery",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Project Gallery", url: "/gallery" },
+    ],
+  }),
   component: GalleryPage,
 });
 

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   Home,
   ChevronRight,
@@ -36,6 +37,26 @@ import moldServicesImg from "../assets/gallery/black-Mold-services.jpg";
 import kitchenRemodelImg from "../assets/gallery/1678008072_en-idei-club-p-home-remodeling-dizain-28.jpg";
 
 export const Route = createFileRoute("/irving-tx")({
+  head: buildPageHead({
+    title: "Water & Fire Damage Repair & Remodeling Irving TX | ARSS Construction",
+    description:
+      "Irving TX's trusted contractor for emergency water damage repair, fire disaster recovery, mold remediation, and premier home remodeling. Call (469) 360-5805.",
+    path: "/irving-tx",
+    city: "Irving",
+    geo: { latitude: "32.8140", longitude: "-96.9489" },
+    keywords: [
+      "water damage repair Irving TX",
+      "fire damage restoration Irving",
+      "home remodeling Irving TX",
+      "Las Colinas home renovation",
+      "mold removal Irving Texas",
+      "emergency restoration Irving",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Irving TX", url: "/irving-tx" },
+    ],
+  }),
   component: IrvingTxPage,
 });
 

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildPageHead } from "../lib/seo";
 import {
   ShieldCheck,
   CheckCircle2,
@@ -32,6 +33,24 @@ import hero1Img from "../assets/hero1.png";
 import hero2Img from "../assets/hero2.png";
 
 export const Route = createFileRoute("/capabilities")({
+  head: buildPageHead({
+    title: "Construction Capabilities & Delivery | ARSS Construction Dallas",
+    description:
+      "Explore our commercial and residential capabilities: structural framing, emergency disaster response, interior architectural finish-out, and turnkey general contracting in Texas.",
+    path: "/capabilities",
+    keywords: [
+      "ARSS construction capabilities",
+      "commercial contractor capabilities",
+      "general construction delivery",
+      "turnkey building solutions DFW",
+      "structural framing Texas",
+      "disaster recovery capabilities",
+    ],
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Capabilities", url: "/capabilities" },
+    ],
+  }),
   component: CapabilitiesPage,
 });
 
